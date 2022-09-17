@@ -1,11 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
-import Card from './Component/Hero/Card';
-import Hero from './Component/Hero/Hero';
-import Navbar from './Component/Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 
 // import Home from './Routes/Home';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
 // import AddProduct from './components/AddProduct';
 
 function App() {
@@ -14,10 +13,13 @@ function App() {
   }, []);
   return (
     <>
-      {' '}
-      <Navbar />
-      <Hero />
-      <Card />
+      <Router>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 }
