@@ -1,27 +1,29 @@
 import React from 'react';
-import { useEffect } from 'react';
-import Navbar from './Components/Navbar/Navbar';
 
-// import Home from './Routes/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home';
-// import AddProduct from './components/AddProduct';
+import { Box, styled } from '@mui/material';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import HomeScreen from './Screen/HomeScreen';
 
-function App() {
-  useEffect(() => {
-    document.title = 'HeroesHomeclone';
-  }, []);
+const StyledBox = styled(Box)({
+  marginLeft: 20,
+  paddingTop: 5,
+});
+
+const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
+      <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <StyledBox>
+        <Box>
+          <HomeScreen />
+        </Box>
+      </StyledBox>
+
+      <Footer />
     </>
   );
-}
+};
 
 export default App;
