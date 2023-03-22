@@ -1,27 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import App from './App';
+import ReactDOM from 'react-dom/client';
 
-import ErrorPage from './Error/Error';
-import ProductScreen from './Screen/ProductScreen';
-
-// import reportWebVitals from './reportWebVitals';
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/product/:id',
-    element: <ProductScreen />,
-  },
-]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 
